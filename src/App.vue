@@ -9,26 +9,33 @@
       @keyup.enter="addTodo"
     />
     <hr />
-
-    <Todo v-for="todo in todos" :key="todo.id" :todo="todo"
+    <!-- TodoList.vue로 옮김 -->
+    <!-- <Todo v-for="todo in todos" :key="todo.id" :todo="todo"
     @toggle-checkbox="toggleCheckbox"
-    @click-delete="deleteTodo"/>
+    @click-delete="deleteTodo"/> -->
+
+    <TodoList :todos="todos"/>
 
   </div>
 </template>
 <script>
-import Todo from "@/components/Todo.vue";
+  //TodoList.vue로 옮김
+//import Todo from "@/components/Todo.vue";
+import TodoList from "@/components/TodoList.vue";
+
 export default {
   components: {
-    Todo
+    TodoList
   },
   data() {
     return {
       todoText : '',
-      todos: [
-        { id: 1, text: "buy a car", checked: true },
-        { id: 2, text: "play game", checked: false },
-      ]
+
+      // Todo App만들기1에서 쓰고, 2에서 state로 옮김
+      // todos: [
+      //   { id: 1, text: "buy a car", checked: true },
+      //   { id: 2, text: "play game", checked: false },
+      // ]
     }
   },
 
